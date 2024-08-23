@@ -72,7 +72,7 @@ class Player extends Sprite {
     //
     // draws hitbox
     this.updateCameraBox();
-    context.fillStyle = "rgba(0, 0, 155, 0.2)";
+    context.fillStyle = "rgba(0, 0, 155, 0)";
     context.fillRect(
       this.cameraBox.position.x,
       this.cameraBox.position.y,
