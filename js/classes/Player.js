@@ -20,6 +20,7 @@ class Player extends Sprite {
     };
 
     this.collisionBlocks = collisionsBlocks;
+    this.isOnGround = false;
     this.hitbox = {
       position: {
         x: this.position.x,
@@ -57,6 +58,7 @@ class Player extends Sprite {
   }
 
   update() {
+    this.isOnGround = false;
     this.updateFrame();
     this.updateHitbox();
     this.position.x += this.velocity.x;
@@ -180,6 +182,7 @@ class Player extends Sprite {
       ) {
         if (this.velocity.y > 0) {
           this.velocity.y = 0;
+          this.isOnGround = true;
           const offset =
             this.hitbox.position.y - this.position.y + this.hitbox.height;
           this.position.y = collisionBlock.position.y - offset - 0.0001;
